@@ -1,0 +1,287 @@
+<template>
+  <div class="padbottom conts ">
+    <div class="contin">
+      <ta-form layout="horizontal"
+               :autoFormCreate="(form)=>{this.form = form}">
+        <ta-row>
+          <ta-col :span='10'>
+            <ta-form-item label="机构名称"
+                          fieldDecoratorId="hospitalName"
+                          :fieldDecoratorOptions="verificationRules('机构名称',50)">
+              <ta-input :disabled='disabled'
+                        :placeholder="disabled?'':'请输入机构名称'" />
+            </ta-form-item>
+            <!--<ta-form-item label="机构分类"-->
+            <!--fieldDecoratorId="hospitalCategory"-->
+            <!--:fieldDecoratorOptions="verificationRules('机构分类')">-->
+            <!--<ta-select :placeholder="disabled?'':'请选择机构分类'"-->
+            <!--:disabled="disabled">-->
+            <!--<ta-select-option v-for="(item ,index) in hospitalCategoryList "-->
+            <!--:key="index"-->
+            <!--:value="item.value">{{item.label}}</ta-select-option>-->
+            <!--</ta-select>-->
+            <!--</ta-form-item>-->
+            <!--<ta-form-item label="是否部级定点机构"-->
+            <!--fieldDecoratorId="isMinisterialLevelDesignatedHospital"-->
+            <!--:fieldDecoratorOptions="verificationRules('是否部级定点机构')">-->
+            <!--<ta-select :placeholder="disabled?'':'请选择是否部级定点机构'"-->
+            <!--:disabled="disabled">-->
+            <!--<ta-select-option v-for="(item ,index) in yesOrNoList "-->
+            <!--:key="index"-->
+            <!--:value="item.value">{{item.label}}</ta-select-option>-->
+            <!--</ta-select>-->
+            <!--</ta-form-item>-->
+            <!--<ta-form-item label="优势科目"-->
+            <!--fieldDecoratorId="advantageSubject"-->
+            <!--:fieldDecoratorOptions="verificationRules('优势科目',100)">-->
+            <!--<ta-input :disabled='disabled'-->
+            <!--:placeholder="disabled?'':'请输入优势科目'" />-->
+            <!--</ta-form-item>-->
+            <!--<ta-form-item label="床位数"-->
+            <!--fieldDecoratorId="bedNum"-->
+            <!--:require="{message:'请输入床位数'}">-->
+            <!--<ta-input-number :min="0"-->
+            <!--:max="9999999999"-->
+            <!--style="width: 100%;"-->
+            <!--:precision="0"-->
+            <!--:disabled='disabled'-->
+            <!--:placeholder="disabled?'':'请输入床位数'" />-->
+            <!--</ta-form-item>-->
+
+            <!--<ta-form-item label="相关联系人"-->
+            <!--fieldDecoratorId="relevantContacts"-->
+            <!--:fieldDecoratorOptions="verificationRules('相关联系人',72)">-->
+            <!--<ta-input :disabled='disabled'-->
+            <!--:placeholder="disabled?'':'请输入相关联系人'" />-->
+            <!--</ta-form-item>-->
+          </ta-col>
+          <ta-col :span='10'>
+            <ta-form-item label="联系电话"
+                          fieldDecoratorId="contactNumber"
+                          :fieldDecoratorOptions="verificationRules('联系电话',{type: 'phone'})">
+              <ta-input :disabled='disabled'
+                        :placeholder="disabled?'':'请输入联系电话'" />
+            </ta-form-item>
+            <!--<ta-form-item label="定点机构编号"-->
+            <!--fieldDecoratorId="hospitalNum"-->
+            <!--:fieldDecoratorOptions="verificationRules('定点机构编号',50)">-->
+            <!--<ta-input :disabled="true"-->
+            <!--:placeholder="disabled?'':'请输入定点机构编号'" />-->
+            <!--</ta-form-item>-->
+            <!--<ta-form-item label="机构等级"-->
+            <!--fieldDecoratorId="hospitalGrade"-->
+            <!--:fieldDecoratorOptions="verificationRules('机构等级')">-->
+            <!--<ta-select :placeholder="disabled?'':'请选择机构等级'"-->
+            <!--:disabled="disabled">-->
+            <!--<ta-select-option v-for="(item ,index) in hospitalGradeList "-->
+            <!--:key="index"-->
+            <!--:value="item.value">{{item.label}}</ta-select-option>-->
+            <!--</ta-select>-->
+            <!--</ta-form-item>-->
+            <!--<ta-form-item label="机构性质"-->
+            <!--fieldDecoratorId="hospitalNature"-->
+            <!--:fieldDecoratorOptions="verificationRules('机构性质')">-->
+            <!--<ta-select :placeholder="disabled?'':'请选择机构性质'"-->
+            <!--:disabled="disabled">-->
+            <!--<ta-select-option v-for="(item ,index) in hospitalNatureList "-->
+            <!--:key="index"-->
+            <!--:value="item.value">{{item.label}}</ta-select-option>-->
+            <!--</ta-select>-->
+            <!--</ta-form-item>-->
+            <!--<ta-form-item label="是否省级定点机构"-->
+            <!--fieldDecoratorId="isMinisterialLevelProvincialHospital"-->
+            <!--:fieldDecoratorOptions="verificationRules('是否省级定点机构')">-->
+            <!--<ta-select :placeholder="disabled?'':'请选择是否省级定点机构'"-->
+            <!--:disabled="disabled">-->
+            <!--<ta-select-option v-for="(item ,index) in yesOrNoList "-->
+            <!--:key="index"-->
+            <!--:value="item.value">{{item.label}}</ta-select-option>-->
+            <!--</ta-select>-->
+            <!--</ta-form-item>-->
+
+          </ta-col>
+          <ta-col :span="20">
+            <ta-col :span="12">
+              <AddressComponent :addressmodel="addressmodel"
+                                :msg="'机构地址'"
+                                :disabled="disabled"
+                                fileldName='hospitalAddrDatas'
+                                @setaddress="setaddress"></AddressComponent>
+            </ta-col>
+            <ta-col :span="8">
+              <ta-form-item label
+                            fieldDecoratorId="hospitalDetailedAddr"
+                            :labelCol="{ span: 0 }"
+                            :wrapperCol="{ span: 23,offset:1 }"
+                            :fieldDecoratorOptions="verificationRules('详细地址',100)">
+                <ta-input :placeholder="disabled?'':'请输入详细地址'"
+                          :disabled="disabled" />
+              </ta-form-item>
+            </ta-col>
+          </ta-col>
+          <ta-col :span="20">
+            <ta-form-item label='机构介绍'
+                          fieldDecoratorId="hospitalIntroduce"
+                          :labelCol="{ span: 3 }"
+                          :wrapperCol="{ span: 21 }"
+                          :fieldDecoratorOptions="verificationRulesNotMustFill('机构介绍',200,true)">
+              <ta-textarea :placeholder="disabled?'':'请输入机构介绍'"
+                           :rows="4"
+                           :disabled="disabled" />
+            </ta-form-item>
+          </ta-col>
+        </ta-row>
+
+      </ta-form>
+    </div>
+    <div class="bom">
+      <ta-button type="primary"
+                 @click="save"
+                 v-if="!disabled">保存</ta-button>
+      <ta-button @click="returns">返回</ta-button>
+    </div>
+  </div>
+</template>
+<script>
+import AddressComponent from '@/scopes/project/common/components/addressComponent'
+export default {
+  components: {
+    AddressComponent
+  },
+  data () {
+    return {
+      addressmodel: [],
+      disabled: false,
+
+      hospitalAddrProvinceList: [], // 所在省份
+      hospitalGradeList: [], // 机构等级
+      hospitalCategoryList: [], // 机构分类
+      hospitalNatureList: [], // 机构性质
+      yesOrNoList: [], // 是否
+
+      flag: '', // 区分新增（add）、编辑（update）、查看（detail）的标识符
+      id: '', // 列表跳转传过来的id
+
+      // 编辑时需要传给后台的数据
+      createTime: null,
+      createUser: null,
+      delState: null,
+      orgId: null
+
+    }
+  },
+  activated () {
+    this.initDatas()
+  },
+  mounted () {
+    // this.getMenuDatas() // 字典数据
+  },
+  methods: {
+    //  编辑及查看初始化数据
+    initDatas () {
+      this.flag = this.$route.query.flag
+      this.id = this.$route.query.id
+      this.disabled = false
+      if (this.flag != 'add') { // 编辑和查看
+        if (this.flag == 'detail') {
+          this.disabled = true
+        }
+        this.post('/applianceInstitution/queryById', { id: this.id }).then((res) => {
+          if (res.serviceSuccess) {
+            let data = res.data.data
+            this.createTime = data.createTime
+            this.createUser = data.createUser
+            this.delState = data.delState
+            this.orgId = data.orgId
+            this.form.setFieldsValue(data)
+            this.addressmodel = [
+              data ? data.hospitalAddrProvince : '',
+              data ? data.hospitalAddrCity : '',
+              data ? data.hospitalAddrCounty : ''
+            ]
+          }
+        })
+      } else { // 新增
+        // 定点机构编号赋值
+        // this.post('/applianceInstitution/getHospitalNum', {}).then((res) => {
+        //   if (res.serviceSuccess) {
+        //     this.form.setFieldsValue({
+        //       hospitalNum: res.data.data
+        //     })
+        //   }
+        // })
+      }
+    },
+    // 字典数据获取
+    getMenuDatas () {
+      this.getProvince() // 获取省份字典
+      this.getMenu('HOSPITAL_GRADE', 'hospitalGradeList') // 获取机构等级字典数据
+      this.getMenu('HOSPITAL_CATEGORY', 'hospitalCategoryList') // 获取机构分类数据字典
+      this.getMenu('HOSPITAL_NATURE', 'hospitalNatureList') // 获取机构性质字典数据
+      this.getMenu('YESNO', 'yesOrNoList') // 获取是否字典数据
+    },
+    // 获取字典数据 code为字典编码，name为对应vue对象
+    getMenu (code, name) {
+      let _self = this
+      _self.post('codetable/getCode', { codeType: code }).then(res => {
+        if (res.serviceSuccess) {
+          res.data.codeList.sort(function (a, b) {
+            return parseInt(a.value) - parseInt(b.value)
+          })
+          _self[name] = res.data.codeList
+        }
+      })
+    },
+    // 获取所在省份
+    getProvince () {
+      let _self = this
+      _self.post('/zoning/queryStatistics', { parentId: null }).then(res => {
+        if (res.serviceSuccess) {
+          _self.hospitalAddrProvinceList = res.data.data
+        }
+      })
+    },
+    // 地址传值
+    setaddress () {
+      this.form.setFieldsValue({
+        hospitalAddrDatas: this.addressmodel
+      })
+    },
+    // 保存
+    save () {
+      let _self = this
+      _self.form.validateFields((err, values) => {
+        if (!err) {
+          let url = '/applianceInstitution/save'
+          let formData = _self.form.getFieldsValue()
+          formData['hospitalAddrProvince'] = formData.hospitalAddrDatas[0]
+          formData['hospitalAddrCity'] = formData.hospitalAddrDatas[1]
+          formData['hospitalAddrCounty'] = formData.hospitalAddrDatas[2]
+          delete formData.hospitalAddrDatas
+          if (_self.flag == 'update') {
+            formData['id'] = _self.id
+            formData['createTime'] = _self.createTime
+            formData['createUser'] = _self.createUser
+            formData['delState'] = _self.delState
+            formData['orgId'] = _self.orgId
+            url = '/applianceInstitution/update'
+          }
+          _self.post(url, formData).then((res) => {
+            if (res.serviceSuccess) {
+              _self.$message.success('数据保存/修改成功！')
+              _self.returns()
+            }
+          })
+        }
+      })
+    },
+    // 返回
+    returns () {
+      this.form.resetFields()
+      this.$router.go(-1)
+    }
+  }
+}
+</script>
+<style scoped>
+</style>

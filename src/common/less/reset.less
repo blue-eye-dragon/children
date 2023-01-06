@@ -1,0 +1,152 @@
+@import "~@yh/ta404-ui/es/style/mixins/index";
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  font-family: @font-family;
+  font-size: @font-size-base;
+  font-variant: @font-variant-base;
+  color: @text-color;
+
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+.fit {
+  height: 100%
+}
+
+* {
+  .beautifyScrollbar();
+}
+//对树点击事件加背景色，写在reset中的起效果
+.el-tree-node:focus>.el-tree-node__content{
+  background-color: #cfd6dd;
+}
+//树选择块的背景颜色
+.el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content{
+  background-color: #cfd6dd;
+}
+////树的整体背景颜色
+//.is-expanded .el-tree-node__content{
+//  background-color: #2baee9;
+//}
+.ant-table-fixed .ant-table-thead>tr>th{
+  background-color: #E6F7FF;
+}
+.ant-table-thead>tr>th{
+  background-color: #E6F7FF;
+}
+.froms{
+  margin: 0px 0 20px 0;
+}
+#xq a{
+  color: white !important;
+}
+.ant-modal-header{
+  background:#1890FF;
+  padding: 6px 24px;
+}
+.ant-modal-title{
+  color: white;
+}
+.ant-modal-close-x{
+  line-height:35px
+}
+
+
+.ant-btn {
+  line-height: 1.5;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 0 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  height: 32px;
+  user-select: none;
+  transition: all .3s cubic-bezier(.645, .045, .355, 1);
+  position: relative;
+  color: rgba(0, 0, 0, .7);
+  background-color: #fff;
+  border-color: #d9d9d9
+}
+.ant-menu-horizontal.ant-menu-sub, .ant-menu-vertical-left.ant-menu-sub, .ant-menu-vertical-right.ant-menu-sub, .ant-menu-vertical.ant-menu-sub {
+  min-width: 220px
+}
+.ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-submenu-selected, .ant-menu-horizontal > .ant-menu-submenu:hover {
+  border-bottom: 2px solid #fff;
+  color: #fff
+}
+.ant-menu-dark .ant-menu-item-active > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-item-active > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-item-active > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-item-active > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-item:hover > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-item:hover > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-item:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-item:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-active > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-active > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-active > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-active > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-title:hover > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-title:hover > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-title:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-title:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before {
+  background: #30DCFF
+}
+.ant-card-body {
+  padding: 10px;
+  zoom: 1
+}
+.ant-table-thead > tr > th {
+  background: #fafafa;
+  transition: background .3s ease;
+  text-align: left;
+  color: #000000;
+  font-weight: 500;
+  border-bottom: 1px solid #e8e8e8
+}
+.ant-table-tbody > tr > td, .ant-table-thead > tr > th {
+  padding: 14px;
+  word-break: break-word;
+  -ms-word-break: break-all
+}
+.ant-timeline-item-head-custom {
+  position: absolute;
+  text-align: center;
+  line-height: 1;
+  margin-top: 0;
+  border: 0;
+  height: auto;
+  border-radius: 50px;
+  padding: 3px 1px;
+  transform: translate(-50%, -50%);
+  top: 5.5px;
+  left: 5px;
+  width: auto
+}
+.ant-form label {
+  font-size: 16px
+}
+.smallFrame{
+  position:relative
+}
+.smallFrame>img{
+  float: left;
+  position:absolute;
+  bottom: 0;
+  left: 0
+}
+.smallFrame>p:nth-of-type(2){
+  text-align: center;
+}
+.ant-menu-inline{
+  transition:all 0.15s ease 0s !important;
+}
+.tadrawer {
+  // height: 100%;
+}

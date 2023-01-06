@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10926886",
+      "name": "qita",
+      "font_class": "qita",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "10926887",
+      "name": "laoren",
+      "font_class": "laoren",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "10926888",
+      "name": "zinv",
+      "font_class": "zinv",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}

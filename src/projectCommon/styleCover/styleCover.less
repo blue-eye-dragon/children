@@ -1,0 +1,26 @@
+/**
+这里书写需要覆盖框架组件的样式
+注意:需要添加!important不然不能覆盖
+例如:
+我要修改 button的背景颜色
+.ant-btn-primary{background-color:red !important;}
+*/
+.ant-table .no-data {
+    text-align: center !important;
+    background-image: none !important;
+    background-repeat: unset !important;
+    background-size: unset !important;
+    background-position: unset !important;
+}
+
+// .ant-table .no-data:after {
+//     content: "暂无数据" !important;
+//     min-height: 200px;
+//     line-height: 200px;
+// }
+
+.ant-btn-primary {
+    color: #fff;
+    background-color: #1B65B9;
+    border-color: #1B65B9;
+}
